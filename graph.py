@@ -15,7 +15,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 
-
 def build_graph(quant):
 
    vert_arr = []
@@ -84,8 +83,6 @@ def build_graph(quant):
    
    return vert_arr, connections
 
-
-
 def show_graph(connections):
     
     G = nx.DiGraph()
@@ -101,4 +98,3 @@ def show_graph(connections):
     nx.draw_networkx_edges(G, pos, arrows = True)
 
     plt.show()
-

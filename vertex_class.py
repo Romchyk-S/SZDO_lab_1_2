@@ -63,13 +63,26 @@ class Vertex:
         
         for v in connections_arr:
             
-            if v in vert_arr:
-              
-                count += 1
+            if type(vert_arr[0]) == Vertex:
+            
+                if v in vert_arr:
+                    
+                    count += 1
+                    
+            else:
+                
+                i = 0
+                
+                while i < len(vert_arr):
+                    
+                    if v in vert_arr[i]:
+                        
+                        count += 1
+                    
+                    i += 1
                 
         return count
                 
-    
     def get_index(self):
         
         return self.index
@@ -94,6 +107,20 @@ class Vertex:
             
             return False
         
+    def add_mark(self, num):
+        
+        self.mark = num
+        
+    def check_mark_exists(self):
+        
+        try:
+            
+            return True
+        
+        except AttributeError:
+            
+            return False
+            
     def __lt__(self, other):
         
        return (self.index < other.index)

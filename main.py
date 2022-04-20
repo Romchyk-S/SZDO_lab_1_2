@@ -47,6 +47,14 @@ while operation_chosen == 1 or operation_chosen == 2:
     
         print()
         
-        co.tree_ordering(levels)
+        # максимальна кількість породжених вершин?
+        
+        h = int(input("Введіть ширину впорядкування: "))
+        
+        print()
+        
+        co.tree_ordering(levels, h)
+        
+print()
         
 print("Дякуємо за роботу")

@@ -5,6 +5,7 @@ Created on Fri Apr  8 16:58:41 2022
 @author: romas
 """
 
+
 import random as r
 
 import vertex_class as vc
@@ -41,14 +42,10 @@ def build_tree(levels):
         vert_arr.append(vert_arr_temp)
         
         i += 1
-        
-    print(vert_arr)
-    
-    print()
     
     tree.show()
 
-    return 0
+    return vert_arr
 
 def create_level(vert_count, vertices_prev_level, tree):
 
@@ -79,15 +76,3 @@ def create_level(vert_count, vertices_prev_level, tree):
         i += 1
      
     return vert_arr_temp, vert_count, tree
-
-def tree_order(tree, h):
-    
-    return 0
-
-def marking(tree):
-    
-    return 0
-
-def build_ordering(tree, h):
-    
-    return 0
