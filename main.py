@@ -44,8 +44,6 @@ while operation_chosen == 1 or operation_chosen == 2:
     if operation_chosen == 2:
         
         levels = int(input("Введіть кількість рівнів дерева: "))
-    
-        print()
         
         # максимальна кількість породжених вершин?
         
@@ -53,7 +51,11 @@ while operation_chosen == 1 or operation_chosen == 2:
         
         print()
         
-        co.tree_ordering(levels, h)
+        tree_order = co.tree_ordering(levels, h)
+        
+        print(f"Упорядкування дерева ширини {h}:")
+        
+        print(tree_order)
         
 print()
         

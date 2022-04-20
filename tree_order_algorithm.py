@@ -14,9 +14,11 @@ def tree_order(tree, h):
     
     marking(tree_for_marking)
     
-    build_ordering(tree, h)
+    tree_for_ordering = c.deepcopy(tree)
     
-    return 0
+    res_arr = build_ordering(tree_for_ordering, h, [])
+    
+    return res_arr
 
 def marking(tree_1):
     
@@ -59,9 +61,54 @@ def marking(tree_1):
         marking(tree_1)
         
         return 0
+    
+def create_marked_arr():
+    
+    return 0
 
-def build_ordering(tree, h):
+def build_ordering(tree, h, res_arr):
     
     temp_arr = []
     
-    return 0
+    tree_len = 0
+    
+    
+    for t in tree:
+        
+        for v in t:
+            
+            if v.count_connections_in_arr(tree) == 0:
+                
+                temp_arr.append(v)
+                
+            tree_len += 1
+                
+    if len(temp_arr) > h:
+        
+        desired_length = len(temp_arr) - h
+        
+        while len(temp_arr) > desired_length:
+            
+            temp_arr.remove(temp_arr[0])
+            
+    for v in temp_arr:
+        
+        for t in tree:
+            
+            if v in t:
+    
+                t.remove(v)
+                
+    if len(temp_arr) != 0:
+        
+        res_arr.insert(0, temp_arr)
+        
+    if tree_len == 0:
+        
+        return res_arr
+    
+    else:
+        
+        res_arr = build_ordering(tree, h, res_arr)
+        
+        return res_arr

@@ -30,6 +30,6 @@ def tree_ordering(num, width):
     
     tree_created = t.build_tree(num)
     
-    tro.tree_order(tree_created, width)
+    tree_order_res = tro.tree_order(tree_created, width)
     
-    return 0
+    return tree_order_res

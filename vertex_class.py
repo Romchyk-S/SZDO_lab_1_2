@@ -45,23 +45,19 @@ class Vertex:
         
         connections_arr = self.get_connections_in()
         
-        count = 0
-        
-        for v in connections_arr:
-            
-            if v in vert_arr:
-              
-                count += 1
-                
-        return count
+        return self.count_connections(connections_arr, vert_arr)
     
     def count_connections_out_arr(self, vert_arr):
         
         connections_arr = self.get_connections_out()
         
+        return self.count_connections(connections_arr, vert_arr)
+    
+    def count_connections(self, conn_arr, vert_arr):
+        
         count = 0
         
-        for v in connections_arr:
+        for v in conn_arr:
             
             if type(vert_arr[0]) == Vertex:
             
