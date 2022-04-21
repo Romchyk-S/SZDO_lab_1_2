@@ -15,7 +15,7 @@ operation_chosen = 1
 
 while operation_chosen == 1 or operation_chosen == 2:
     
-    operation_chosen = int(input("Оберіть задачу (1 побудова упорядкувань для графу, 2 побудова впорядкування для дерева): "))
+    operation_chosen = int(input("Оберіть задачу (1 – побудова упорядкувань для графу, 2 – побудова впорядкування для дерева): "))
     
     if operation_chosen == 1:
         
@@ -45,13 +45,13 @@ while operation_chosen == 1 or operation_chosen == 2:
         
         levels = int(input("Введіть кількість рівнів дерева: "))
         
-        # максимальна кількість породжених вершин?
+        max_child_vert = int(input("Введіть максимальну кількість дочірніх вершин: "))
         
         h = int(input("Введіть ширину впорядкування: "))
         
         print()
         
-        tree_order = co.tree_ordering(levels, h)
+        tree_order = co.tree_ordering(levels, h, max_child_vert)
         
         print(f"Упорядкування дерева ширини {h}:")
         

@@ -14,7 +14,7 @@ import treelib as tl
 
 
 
-def build_tree(levels):
+def build_tree(levels, num_child_vert):
     
     vert_arr = []
     
@@ -37,7 +37,7 @@ def build_tree(levels):
             
         while len(vert_arr_temp) == 0:
             
-            vert_arr_temp, created_vertices, tree = create_level(created_vertices, vert_arr[i], tree)
+            vert_arr_temp, created_vertices, tree = create_level(created_vertices, vert_arr[i], tree, num_child_vert)
             
         vert_arr.append(vert_arr_temp)
         
@@ -47,7 +47,7 @@ def build_tree(levels):
 
     return vert_arr
 
-def create_level(vert_count, vertices_prev_level, tree):
+def create_level(vert_count, vertices_prev_level, tree, num_child_vert):
 
     i = 0 
     
@@ -55,7 +55,7 @@ def create_level(vert_count, vertices_prev_level, tree):
     
     while i < len(vertices_prev_level):
     
-        new_vertices = r.randint(0, 3)
+        new_vertices = r.randint(0, num_child_vert)
     
         j = 0
         

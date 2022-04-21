@@ -14,9 +14,9 @@ import tree as t
 import tree_order_algorithm as tro
 
 
-def graph_ordering(num):
+def graph_ordering(num_vert):
     
-    vert_arr, connections = g.build_graph(num)
+    vert_arr, connections = g.build_graph(num_vert)
 
     g.show_graph(connections)
 
@@ -26,9 +26,9 @@ def graph_ordering(num):
     
     return s_upper_res, s_lower_res
 
-def tree_ordering(num, width):
+def tree_ordering(num_levels, width, num_child_vert):
     
-    tree_created = t.build_tree(num)
+    tree_created = t.build_tree(num_levels, num_child_vert)
     
     tree_order_res = tro.tree_order(tree_created, width)
     
