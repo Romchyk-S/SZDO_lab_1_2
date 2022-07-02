@@ -14,49 +14,51 @@ operation_chosen = 1
 
 
 while operation_chosen == 1 or operation_chosen == 2:
-    
+
     operation_chosen = int(input("Оберіть задачу (1 – побудова упорядкувань для графу, 2 – побудова впорядкування для дерева): "))
-    
+
     if operation_chosen == 1:
-        
+
         print()
-    
+
         quantity = int(input("Введіть кількість вершин графу: "))
-    
+
         print()
-        
+
         s_upper, s_lower = co.graph_ordering(quantity)
-        
-        
+
+
         print("Упорядкування S верхнє:")
-        
+
         print(s_upper)
-        
+
         print()
-        
+
         print("Упорядкування S нижнє:")
-        
+
         print(s_lower)
-        
+
         print()
-    
-    
+
+
     if operation_chosen == 2:
-        
+
         levels = int(input("Введіть кількість рівнів дерева: "))
-        
+
         max_child_vert = int(input("Введіть максимальну кількість дочірніх вершин: "))
-        
+
         h = int(input("Введіть ширину впорядкування: "))
-        
+
         print()
-        
+
         tree_order = co.tree_ordering(levels, h, max_child_vert)
-        
+
         print(f"Упорядкування дерева ширини {h}:")
-        
+
         print(tree_order)
-        
+
+        print()
+
 print()
-        
+
 print("Дякуємо за роботу")
